@@ -1,4 +1,3 @@
-// components/ContactForm.js
 import React, { useState } from 'react';
 
 const ContactForm = () => {
@@ -23,7 +22,6 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form validation
     if (!formData.name || !formData.email || !formData.message) {
       setFormStatus({
         submitted: true,
@@ -33,7 +31,6 @@ const ContactForm = () => {
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setFormStatus({
@@ -44,7 +41,6 @@ const ContactForm = () => {
       return;
     }
 
-    // Simulate form submission
     setTimeout(() => {
       setFormStatus({
         submitted: true,

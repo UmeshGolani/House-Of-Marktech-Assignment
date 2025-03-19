@@ -1,24 +1,18 @@
-// components/Hero.js
 import React, { useRef, useEffect } from "react";
 
 const Hero = () => {
-  // Create a reference to the video element
   const videoRef = useRef(null);
 
-  // Handle video playback after component mounts
   useEffect(() => {
     if (videoRef.current) {
-      // Attempt to play the video and handle any errors
       videoRef.current.play().catch((error) => {
         console.error("Video playback failed:", error);
-        // If autoplay fails, we at least have the poster as fallback
       });
     }
   }, []);
 
   return (
     <section className="relative h-screen flex items-center justify-center">
-      {/* Background video with fallback image */}
       <div className="absolute inset-0 overflow-hidden">
         <video
           ref={videoRef}
@@ -29,16 +23,12 @@ const Hero = () => {
           poster="/images/hero-fallback.jpg"
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
-          {/* Add WebM format for better browser compatibility */}
           <source src="/videos/hero-background.webm" type="video/webm" />
-          {/* Fallback image will be shown if video doesn't load */}
         </video>
       </div>
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      {/* Content */}
       <div className="relative z-10 text-center text-white px-4">
         <h1 className="text-5xl md:text-6xl font-bold mb-4">
           Transform Your Digital Experience

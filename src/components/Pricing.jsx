@@ -1,4 +1,3 @@
-// components/Pricing.js
 import React, { useState } from 'react';
 
 const Pricing = () => {
@@ -48,7 +47,6 @@ const Pricing = () => {
 
   const handlePlanSelect = (planId) => {
     setSelectedPlan(planId);
-    // You could also implement additional logic here like showing a modal or navigating to checkout
   };
 
   return (

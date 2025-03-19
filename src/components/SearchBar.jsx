@@ -1,10 +1,8 @@
-// components/SearchBar.js - With debounce implementation
 import React, { useState, useCallback } from 'react';
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   
-  // Debounce implementation
   const debounce = (func, delay) => {
     let timeoutId;
     return function(...args) {
@@ -17,7 +15,6 @@ const SearchBar = ({ onSearch }) => {
     };
   };
   
-  // Using useCallback to memoize the debounced function
   const debouncedSearch = useCallback(
     debounce(value => {
       onSearch(value);
