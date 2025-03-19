@@ -14,14 +14,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden">
-        <video
-          ref={videoRef}
-          className="object-cover w-full h-full"
-          muted
-          loop
-          playsInline
-          poster="/images/hero-fallback.jpg"
-        >
+        <video ref={videoRef} className="object-cover w-full h-full" autoPlay muted loop playsInline poster="/images/hero-fallback.jpg">
           <source src="/videos/hero-background.mp4" type="video/mp4" />
           <source src="/videos/hero-background.webm" type="video/webm" />
         </video>
